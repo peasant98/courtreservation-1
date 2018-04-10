@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+{% load static %} <!-- New line -->
+<html lang="en" dir="ltr">
+<head>
+<title>Court Reservation</title>
+<script language = "javascript">
+	function testResults(form)
+	{
+		int courtsOpen = 6;
+		if(courtsOpen >= 1)
+		{
+			"/reserve";
+			courtsOpen--;
+		}
+		else
+		{
+			alert ("There is no open courts at the moment. Please try again later!");
+		}
+	}
+</script>
+<meta charset="iso-8859-1">
+<!--<link rel="stylesheet" href="styles/layout.css" type="text/css"> -->
+
+</head>
+	<style>
+
+		.blackM8
+		{
+			width: 100%;
+			background-color: black;
+			height: 100%;
+		}
+
+		div.container {
+			width: 100%;
+			//border: 0px solid gray;
+			height: 100%;
+		}
+
+		header{
+			//padding: 1em;
+			color: white;
+			background-color: #00000;
+			height: 5%;
+			clear: left;
+			text-align: center;
+			overflow:hidden;
+		}
+
+		.mid
+		{
+			//padding: 1em;
+			clear: left;
+			text-align: center;
+			background-color: #ffffff;
+		}
+
+		.footer {
+			//padding: 1em;
+			color: white;
+			background-color: #272727;
+			clear: left;
+			text-align: center;
+			
+			margin-bottom: 0;
+			bottom: 0;
+		}
+
+		.verticalCenter
+		{
+			margin-left: auto;
+			margin-right: auto;
+			width: 60%;
+			height: 100%;
+			background-color: black;
+		}
+		
+		p
+		{
+			font-family:'Gotham SSm', sans-serif;
+			font-size: 30px;
+		}
+
+	</style>
+<body>
+	<div class = "blackM8">
+	<!--<div class ="verticalCenter"> -->
+		<div class="container">
+
+			<header>
+				<h1>
+					{% load static %}
+					<a href="/"><img src="http://boulder.startupweek.co/wp-content/uploads/sites/23/2016/05/CU-Boulder.png" height = "60%" width= "80%"></a>
+				</h1>
+			<!--<a href="/reserve/">Go Here for Some Facts</a>-->
+			</header>
+			 <!--
+			  <h1>R</h1>
+			  -->
+
+			<div class = "mid">
+
+				<h1>Basketball Court Reservation System</h1></br>
+
+				<form action="/reserve/" method="get">
+				<!--<p>I am playing solo
+				<input type="checkbox" name="solo" value="Solo"> </p>
+				</input>
+				<!--<p>We are playing in group
+						<input type="checkbox" name="group" value="Group"> </p>-->
+				<p>
+				How many members do you have in your team?</p>
+				
+				<input type="text" name="team"  checked="checked">
+				<input type="submit" value="Submit" onClick = "testResults(this.form)">
+				</form>
+
+				</br></br>
+
+				<!-- https://i1.wp.com/www.leadersayswhat.com/wp-content/uploads/2015/04/Michael-Jordan-dunk.jpg  -->
+				<img src="http://hdfreewallpaper.net/wp-content/uploads/2015/07/basketball-player-slam-dunk-high-resolution-wallpaper-desktop-background-images-full-free.jpg" height = "40%" width= "100%">
+			  
+			</div>
+			  <!--
+			  <p>I</p>
+			  -->
+
+			<div class = "footer">Copyright &copy; CU Boulder</div>
+
+		</div>
+	<!--</div>-->
+	</div>
+
+</body>
+</html>
+
