@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'courts1',
+    'reserveScreen.apps.ReservescreenConfig'
 ]
 
 MIDDLEWARE_CLASSES = [
