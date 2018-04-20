@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'courts1',
+    'courts1.apps.Courts1Config',
     'reserveScreen.apps.ReservescreenConfig'
 ]
 
