@@ -15,6 +15,7 @@ from courts1.models import Team, Player, Loaded_Team
 import random as rn
 
 import courts1.method as mt
+
 # you need the HttpResponse so far
 # to be able to take in a request and then respond 
 # with a httpresponse that tells the user what is going on 
@@ -124,6 +125,7 @@ def finder(request):
             value = 4
         else:
             value = 5
+
         inqueue_team = mt.run_queue_analysis(value)
         
         # returns 0 or a team on 5 depending on what occurs within the actual algorithm 
@@ -147,6 +149,6 @@ def finder(request):
         return HttpResponse(value)
     else:
         return HttpResponse("Error! Error! Error!")
-        return HttpResponse(value + 4)
+        
         
     
