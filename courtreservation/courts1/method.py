@@ -169,6 +169,7 @@ def run_queue_analysis(value):
                     for m in range(0, len(T1.players)):
                         namedPlayer = str(T1.players[m].player_name)
                         print(namedPlayer)
+                        
                     first_loaded_team = Loaded_Team.objects.create(team_name=full_teamname, defense='good', offense='noobs', team_pic='Fine players', members=5)
                     for i in T1.players:
                         first_loaded_team.player_set.create(loaded_team=first_loaded_team, file_type='.png', player_name=i.player_name)
@@ -624,6 +625,7 @@ def run_queue_analysis(value):
             print "Invalid amount of players!"
             print "Nothing will entered into the database, you noob!!!!"
         return 0
+    # I don't think that we will need this!!!
     except ValueError:
         print "Please enter in a valid option!"
         print ""
