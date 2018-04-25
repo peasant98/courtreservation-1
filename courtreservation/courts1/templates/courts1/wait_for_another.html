@@ -1,0 +1,28 @@
+<title> Pair Does Not Exist Yet! </title>
+<body style="background-color:rgb(116, 225, 240);">
+
+    <h1> WELCOME: To the CU Boulder Basketball Courts. Want to be as good as Lebron James?</h1>
+    Just kidding...  
+    
+    
+    <p>Currently, you will not be able to play a game yet. You are currently in a five person team</p>
+    <p>But, we do not have two sets of five people yet. Please continue to wait.</p>
+    <h1> Also, here are the current members on your team: </h1>
+        
+        
+        <h4> Also, your group's team name is {{ inqueue_team.team_name }}</h4>
+    
+       
+        <h2>Here are all of the players on this newly formed team!</h2>
+        <o1>
+    
+            {% for i in current_players %}
+            
+            <li><b>  {{ i.player_name }}</b> is one of the players on this team!</li>
+            {% endfor %}
+    
+        </o1>
+        
+    
+    
+    </body>

@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <script>
+        function theLegend() {
+            window.alert('You clicked the button! Good job!')
+            var legend = "My dude, ";
+            document.getElementById('demo').innerHTML = legend + 'ha, the LEGEND is Giannis, the next great NBA MVP!';
+            document.getElementById('demo').style.color = "blue";
+        }
+    </script>
+
+    <style>
+
+        #firstrow {
+        /* need to do for each specific court! */
+        /* Style the element with the id "myHeader" */
+        }
+
+        /* target relates to name, is very important */
+
+        /* ids only work for one unique element */
+
+        /* .xx is a class and applies to anything with the certain class. */
+
+        .hello {
+        text-align: center;
+        transform: scale(1.1, 1,1);
+        
+        }
+        .bob {
+        background-color: white;
+        padding: 15px;
+        font-family: verdana;
+        }
+
+        .crop {
+        
+        object-fit: none;
+        /* Do not scale the image */
+        object-position: left;
+        /* Center the image within the element */
+        height: 456px;
+        width: 368.5px;
+        -webkit-filter: grayscale(100%);
+        filter: grayscale(100%);
+        -webkit-transition: .3s ease-in-out;
+        transition: .3s ease-in-out;
+        }
+
+        .crop:hover {
+        -webkit-filter: grayscale(0);
+        filter: grayscale(0);
+        background-color: orange;
+        cursor: pointer;
+        }
+
+        .turned {
+        
+        object-fit: none;
+        /* Do not scale the image */
+        object-position: left;
+        /* Center the image within the element */
+        height: 456px;
+        width: 368.5px;
+        transform: rotate(180deg);
+        -webkit-filter: grayscale(100%);
+        filter: grayscale(100%);
+        -webkit-transition: .3s ease-in-out;
+        transition: .3s ease-in-out;
+        }
+
+        .turned:hover {
+        -webkit-filter: grayscale(0);
+        filter: grayscale(0);
+        background-color: orange;
+        cursor: pointer;
+        }
+
+        /* This will matter a lot with <script>, etc.*/
+
+        /* document.getElementById("myHeader").innerHTML = "Have a nice day!";*/
+
+        body {
+        background-color: powderblue;
+        }
+
+        table,
+        th,
+        td {
+        border: 1px solid black;
+        border-collapse: collapse;
+        padding: 20px;
+        background-color: white;
+        font-family: verdana;
+        }
+
+        p {
+        text-indent: 50px;
+        padding: 5px;
+        font-family: arial;
+        }
+
+        h1,
+        h2,
+        h3 {
+        font-family: verdana;
+        text-align: center;
+        }
+
+        body {}
+    </style>
+  </head>
+  <!-- Testing out some basic comments in HTML -->
+
+  <body>
+    <title> The Main Page </title>
+    <h1>Matthew Strong Sandbox for Web Development </h1>
+    <h2>
+      My Second Heading</h2>
+    <h3> My Third Heading</h3>
+    <h4> Also, the added team name is {{ team1.team_name }}</h4>
+
+    {% if all_players %}
+    <h2>Here are all of the players in the league!</h2>
+    <u1>
+
+        {% for player in all_players %}
+        
+        <li><b>{{ value }}.  {{ player.player_name }}</b> is one of the players!</li>
+        {% endfor %}
+
+    </u1>
+    {% else %}
+    <h2>No players exist at this point! Courts are very much empty, my dude!</h2>
+    {% endif %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <p><i>My first paragraph.</i></p>
+    <p><a href="#legend">See the Legend!</a></p>
+    <p><a href="https://www.gmail.com" target="_blank">Gmail</a></p>
+    <br>
+    <br>
+    <div>Randomly testing out this div aspect.</div>
+    <p> <b> &euro; : Be able to learn: </b></p>
+    <ul>
+      <li> &forall; Footwork</li>
+      <li> &forall; Skill</li>
+      <li> &forall; Passion</li>
+      <li> &forall; Greatness.</li>
+    </ul>
+    <hr>
+    <button class="bob" type="button" onclick="theLegend()">
+
+<strong>Legend</strong></button>
+    <br>
+    <br>
+    <p id="demo"> Click <b>'Legend'</b> for more information.</p>
+    <img src="https://d3p157427w54jq.cloudfront.net/uploads/2018/02/giannis-636x397.jpg" alt="Google.com" id="legend">
+
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <table>
+      <tr id="firstrow">
+        <th>Team</th>
+        <th>Name</th>
+        <th>Rank</th>
+      </tr>
+      <tr>
+        <td>Rockets</td>
+        <td>Billy Sanders</td>
+        <td>22</td>
+      </tr>
+      <tr>
+        <td>Rockets</td>
+        <td>Baby "Destroyer" Bobby</td>
+        <td>1</td>
+      </tr>
+      <tr>
+        <td>Rockets</td>
+        <td>Biggs "Small" Hana</td>
+        <td>4</td>
+      </tr>
+      <tr>
+        <td>Rockets</td>
+        <td>Calla "GOAT" Calla</td>
+        <td>1</td>
+      </tr>
+      <tr>
+        <td>Rockets</td>
+        <td>John Smith</td>
+        <td>32</td>
+      </tr>
+    </table>
+    <br>
+    <br>
+    <textarea name="message" rows="10" cols="30" class="bob"> This is a text box.</textarea>
+
+
+    <br>
+    <br>
+    <br>
+    <br>
+
+
+    <div class="hello">
+    <img src="https://www.limitlesswalls.com/media/catalog/product/cache/1/image/736x/040ec09b1e35df139433887a97daa66f/5/8/58655337.1484689584.jpg" alt="Google.com" class="crop">
+
+    <img src="https://www.limitlesswalls.com/media/catalog/product/cache/1/image/736x/040ec09b1e35df139433887a97daa66f/5/8/58655337.1484689584.jpg" alt="Google.com" class="turned">
+
+
+    </div>
+
+
+
+    <br>
+    <br>
+    <br>
+    <br>
+
+  <div class="hello">
+  
+
+    <img src="https://www.limitlesswalls.com/media/catalog/product/cache/1/image/736x/040ec09b1e35df139433887a97daa66f/5/8/58655337.1484689584.jpg" alt="Google.com" class="crop">
+
+    <img src="https://www.limitlesswalls.com/media/catalog/product/cache/1/image/736x/040ec09b1e35df139433887a97daa66f/5/8/58655337.1484689584.jpg" alt="Google.com" class="turned">
+  </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="hello">
+    <img src="https://www.limitlesswalls.com/media/catalog/product/cache/1/image/736x/040ec09b1e35df139433887a97daa66f/5/8/58655337.1484689584.jpg" alt="Google.com" class="crop">
+
+    <img src="https://www.limitlesswalls.com/media/catalog/product/cache/1/image/736x/040ec09b1e35df139433887a97daa66f/5/8/58655337.1484689584.jpg" alt="Google.com" class="turned">
+    </div>
+  </body>
+
+</html>

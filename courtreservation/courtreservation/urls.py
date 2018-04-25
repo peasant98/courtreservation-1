@@ -17,11 +17,12 @@ Including another URLconf
 from django.conf import settings
 from django.conf.urls import url, include
 from django.contrib import admin
-
+from . import views
 #testingtestingtesting
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^', include('courts1.urls')),
+    url(r'^$', views.sendThem, name='sendThem'),
+    url(r'^courts1/', include('courts1.urls')),
     url(r'^reserver/', include('reserveScreen.urls')),
 ]
