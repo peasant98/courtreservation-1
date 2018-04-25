@@ -11,7 +11,7 @@ urlpatterns = [
     # matches with the courtsv1 app
 
     
-    url(r'^$', views.index, name='index'),
+    url(r'^$', views.home, name='home'),
 
     # courtsv1/<id of Team>
     url(r'^(?P<team_id>[0-9]+)/$',views.detail, name='detail'),
