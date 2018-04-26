@@ -1,6 +1,7 @@
 from __future__ import unicode_literals
 
 from django.db import models
+from reserveScreen.models import Court
 #from django.db.models import permalink
 #from testing
 #from testing.models import Court
@@ -14,6 +15,7 @@ class Loaded_Team(models.Model):
     offense = models.CharField(max_length=100)
     team_pic = models.CharField(max_length=1000)
     members = models.CharField(max_length=200, null=True)
+    court_id = models.ForeignKey(Court, on_delete=models.CASCADE, null=True)
     # this part here is very important for interfacting the two apps together in conjunction with each other. 
     
     # this next part here is critical for the court - team interaction in the back end!
