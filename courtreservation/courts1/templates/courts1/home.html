@@ -22,7 +22,6 @@
 
 </head>
 	<style>
-		
 		html {
 		  background-color: #000;
 		}
@@ -34,7 +33,6 @@
 		}
 		div.container {
 			width: 100%;
-			//border: 0px solid gray;
 			min-height: 100%;
 			height: auto !important;
 			height: 100%;
@@ -43,60 +41,41 @@
 			padding: 1em;
 			color: white;
 			background-color: #00000;
-			//height: 5%;
 			clear: left;
-			//text-align: center;
 			overflow:hidden;
 		}
 		
 		.midPicture
 		{
-			padding: 1.5em;
-			clear: left;
-			text-align: center;
+			padding-top: 1.5em;
+			padding-bottom: 0.5em;
 			background-color: #272727;
-			//background-color: #fff;
-			height: 40%;
 		}
 		.midSmallWhite
 		{
-			//padding: 1em;
-			//clear: left;
 			text-align: center;
 			background-color: #ffffff;
-			//background-color: #272727;
-			//height: 2.5em;
 			height: 4em;
 		}
 		.midQuestion
 		{
-			//padding: 1px;
-			//padding-bottom: 0.5 em;
-			//clear: left;
 			padding: 2px;
 			background-color: #ffffff;
-			//background-color: #272727;
-			//height: 70px;
 			height: 1%;
 			text-align: center;
 		}
 		.midSmallGray
 		{
 			padding: 1em;
-			//clear: left;
 			text-align: center;
 			background-color: #272727;
-			
-			//height: 1%;
 			height: 2%;
 		}
 		.midRegular
 		{
 			padding: 0.001em;
-			//clear: left;
 			text-align: center;
 			background-color: #ffffff;
-			//height: 7em;
 		}
 
 		h1 {
@@ -133,8 +112,6 @@
 			letter-spacing: normal;
 			text-transform: none;
 			font-family:'Gotham SSm', sans-serif;
-			//font-size: 30px;
-			//height: auto;
 			height: 100%  auto;
 		}
 
@@ -154,7 +131,6 @@
 			text-transform: none;
 			font-family:'Gotham SSm', sans-serif;
 			font-size: 30px;
-			//line-height: 2em;
 			letter-spacing: .05em;
 		}
 		body 
@@ -193,6 +169,86 @@
 			-webkit-appearance: none;
 		}
 		
+		
+		
+		
+		* {box-sizing: border-box}
+		body {font-family: Verdana, sans-serif; margin:0}
+		.mySlides {display: none}
+		img {vertical-align: middle;}
+
+		/* Slideshow container */
+		.slideshow-container {
+		  max-width: 700px;
+		  position: relative;
+		  margin: auto;
+		}
+
+		/* Next & previous buttons */
+		.prev, .next {
+		  cursor: pointer;
+		  position: absolute;
+		  top: 50%;
+		  width: auto;
+		  padding: 16px;
+		  margin-top: -22px;
+		  color: white;
+		  font-weight: bold;
+		  font-size: 18px;
+		  transition: 0.6s ease;
+		  border-radius: 0 3px 3px 0;
+		}
+
+		/* Position the "next button" to the right */
+		.next {
+		  right: 0;
+		  border-radius: 3px 0 0 3px;
+		}
+
+		/* On hover, add a black background color with a little bit see-through */
+		.prev:hover, .next:hover {
+		  background-color: rgba(0,0,0,0.8);
+		}
+
+
+		/* The dots/bullets/indicators */
+		.dot {
+		  cursor: pointer;
+		  height: 15px;
+		  width: 15px;
+		  margin: 0 2px;
+		  background-color: #bbb;
+		  border-radius: 50%;
+		  display: inline-block;
+		  transition: background-color 0.6s ease;
+		}
+
+		.active, .dot:hover {
+		  background-color: #717171;
+		}
+
+		/* Fading animation */
+		.fade {
+		  -webkit-animation-name: fade;
+		  -webkit-animation-duration: 1.5s;
+		  animation-name: fade;
+		  animation-duration: 1.5s;
+		}
+
+		@-webkit-keyframes fade {
+		  from {opacity: .4} 
+		  to {opacity: 1}
+		}
+
+		@keyframes fade {
+		  from {opacity: .4} 
+		  to {opacity: 1}
+		}
+
+		/* On smaller screens, decrease text size */
+		@media only screen and (max-width: 300px) {
+		  .prev, .next,.text {font-size: 11px}
+		}
 	</style>
 <body>
 	<div class = "blackM8">
@@ -211,15 +267,37 @@
 
 			<div class = "midSmallWhite">
 
-				<h1 style = "font-family: 'Gotham SSm',sans-serif">Basketball Court Reservation System</h1></br>
+				<h1>Basketball Court Reservation System</h1></br>
 			</div>
-			
+			<!--
 			<div class = "midPicture">
-				<!-- https://i1.wp.com/www.leadersayswhat.com/wp-content/uploads/2015/04/Michael-Jordan-dunk.jpg  -->
-				<img class = "mySlides" src="http://hdfreewallpaper.net/wp-content/uploads/2015/07/basketball-player-slam-dunk-high-resolution-wallpaper-desktop-background-images-full-free.jpg" style="height:60%" width= "42%" style ="margin:0px auto"> 
+				<!-- https://i1.wp.com/www.leadersayswhat.com/wp-content/uploads/2015/04/Michael-Jordan-dunk.jpg  
+				<img class = "mySlides" src="http://hdfreewallpaper.net/wp-content/uploads/2015/07/basketball-player-slam-dunk-high-resolution-wallpaper-desktop-background-images-full-free.jpg" style="height:100%" width= "42%" style ="margin:0px auto"> 
 				<img class = "mySlides" src="https://mk0slamonlinensgt39k.kinstacdn.com/wp-content/uploads/2017/02/glenn_robinson_iii_fb.jpg" style="height:100%" width= "45%" style ="margin:0px auto">
+			</div> -->
+			<div class = "midPicture">
+			<div class="slideshow-container">
+
+			<div class="mySlides fade">
+			  <img src="http://hdfreewallpaper.net/wp-content/uploads/2015/07/basketball-player-slam-dunk-high-resolution-wallpaper-desktop-background-images-full-free.jpg" height="400em" width= "100%" style ="margin:0px auto">
 			</div>
-			  
+
+			<div class="mySlides fade">
+			  <img src="https://mk0slamonlinensgt39k.kinstacdn.com/wp-content/uploads/2017/02/glenn_robinson_iii_fb.jpg" height="400em" width= "100%" style ="margin:0px auto">
+			</div>
+
+
+			<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+			<a class="next" onclick="plusSlides(1)">&#10095;</a>
+				<br>
+				
+				<div style="text-align:center">
+				  <span class="dot" onclick="currentSlide(1)"></span> 
+				  <span class="dot" onclick="currentSlide(2)"></span> 
+				</div>
+				
+			</div>
+			  </div>
 			<script>
 				var myIndex = 0;
 				slideShow();
@@ -235,8 +313,36 @@
 					myIndex++;
 					if (myIndex > x.length) {myIndex = 1}    
 					x[myIndex-1].style.display = "block";  
-					setTimeout(slideShow, 2000); // Change image every 2 seconds
+					setTimeout(slideShow, 3000); // Change image every 2 seconds
 				}
+				
+				var slideIndex = 1;
+				showSlides(slideIndex);
+
+				function plusSlides(n) {
+				  showSlides(slideIndex += n);
+				}
+
+				function currentSlide(n) {
+				  showSlides(slideIndex = n);
+				}
+
+				function showSlides(n) {
+				  var i;
+				  var slides = document.getElementsByClassName("mySlides");
+				  var dots = document.getElementsByClassName("dot");
+				  if (n > slides.length) {slideIndex = 1}    
+				  if (n < 1) {slideIndex = slides.length}
+				  for (i = 0; i < slides.length; i++) {
+					  slides[i].style.display = "none";  
+				  }
+				  for (i = 0; i < dots.length; i++) {
+					  dots[i].className = dots[i].className.replace(" active", "");
+				  }
+				  slides[slideIndex-1].style.display = "block";  
+				  dots[slideIndex-1].className += " active";
+				}
+				
 			</script>
 			  
 			<div class = "midQuestion">			
@@ -263,15 +369,15 @@
 					<input type="submit" value="Submit" name="value">
 				</form>
 			</div>
-			
+				
 			  <!--
 			  <p>I</p>
 			  -->
 
-			<div class = "footer">Copyright &copy; CU Boulder</div>
 
 		</div>
 	<!--</div>-->
+		<div class = "footer">Copyright &copy; CU Boulder</div>
 	</div>
 
 </body>
