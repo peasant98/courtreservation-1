@@ -26,7 +26,7 @@ SECRET_KEY = 'srq#1-e5hpwbp4vq&kz_z=8%y@jek)txq-gx8mb5gm9j8jk+wc'
 DEBUG = True
 
 ALLOWED_HOSTS = ['django-env.vhuwmja2zp.us-west-2.elasticbeanstalk.com',
-'www.cucourts.com']
+'www.cucourts.com', 'localhost']
 
 
 # Application definition
