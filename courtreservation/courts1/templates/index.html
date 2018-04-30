@@ -30,40 +30,110 @@
 			background-color: black;
 			height: 100%;
 		}
-
 		div.container {
 			width: 100%;
 			//border: 0px solid gray;
+			min-height: 100%;
+			height: auto !important;
 			height: 100%;
 		}
-
 		header{
-			//padding: 1em;
+			padding: 1em;
 			color: white;
 			background-color: #00000;
-			height: 5%;
+			//height: 5%;
 			clear: left;
-			text-align: center;
+			//text-align: center;
 			overflow:hidden;
 		}
-
-		.mid
+		
+		.midPicture
+		{
+			padding: 1.5em;
+			clear: left;
+			text-align: center;
+			background-color: #272727;
+			//background-color: #fff;
+			height: 40%;
+		}
+		.midSmallWhite
 		{
 			//padding: 1em;
-			clear: left;
+			//clear: left;
 			text-align: center;
 			background-color: #ffffff;
+			//background-color: #272727;
+			//height: 2.5em;
+			height: 4em;
+		}
+		.midQuestion
+		{
+			//padding: 1px;
+			//padding-bottom: 0.5 em;
+			//clear: left;
+			padding: 2px;
+			background-color: #ffffff;
+			//background-color: #272727;
+			//height: 70px;
+			height: 1%;
+			text-align: center;
+		}
+		.midSmallGray
+		{
+			padding: 1em;
+			//clear: left;
+			text-align: center;
+			background-color: #272727;
+			
+			//height: 1%;
+			height: 2%;
+		}
+		.midRegular
+		{
+			padding: 0.001em;
+			//clear: left;
+			text-align: center;
+			background-color: #ffffff;
+			//height: 7em;
 		}
 
+		h1 {
+		
+			background: 0 0;
+			border: 0;
+			width: 100%;
+			height: 100%;
+			-webkit-box-sizing: border-box;
+			box-sizing: border-box;
+			border-radius: 0;
+			padding-right: 30px;
+			font-family: 'Gotham SSm',sans-serif;
+			font-size: 50px;
+			font-weight: 400;
+			color: #000;
+			letter-spacing: .05em;
+			border-bottom: 1px solid rgba(255,255,255,.7);
+			-webkit-transition: border-color 300ms cubic-bezier(.694,0,.335,1);
+			-o-transition: border-color 300ms cubic-bezier(.694,0,.335,1);
+			transition: border-color 300ms cubic-bezier(.694,0,.335,1);
+		}
 		.footer {
-			//padding: 1em;
+			position: relative;
+			width: 100%
+			overflow:hidden;
+			padding: 1em;
 			color: white;
-			background-color: #272727;
-			clear: left;
+			background-color: #000000;
+			clear: both;
 			text-align: center;
-			
-			margin-bottom: 0;
 			bottom: 0;
+			font-weight: 300;
+			letter-spacing: normal;
+			text-transform: none;
+			font-family:'Gotham SSm', sans-serif;
+			//font-size: 30px;
+			//height: auto;
+			height: 100%  auto;
 		}
 
 		.verticalCenter
@@ -77,8 +147,48 @@
 		
 		p
 		{
+			font-weight: 100;
+			letter-spacing: normal;
+			text-transform: none;
 			font-family:'Gotham SSm', sans-serif;
 			font-size: 30px;
+			//line-height: 2em;
+			letter-spacing: .05em;
+		}
+		body 
+		{ 
+			margin:0; 
+			height: 100%;
+		}
+		input {
+			font-weight: 300;
+			letter-spacing: normal;
+			text-transform: none;
+			font-family:'Gotham SSm', sans-serif;
+			border: 0;
+			border-radius: 1;
+			background: #006db1;
+			color: white;
+			height: 30px;
+			width: 100px;
+			font-size: 20px;
+			-webkit-appearance: none;
+		}
+		select
+		{
+			border: 0;
+			border-radius: 0;
+			background: #006db1;
+			color: white;
+			height: 30px;
+			width: 80px;
+			font-weight: 200;
+			letter-spacing: normal;
+			text-transform: none;
+			font-family:'Gotham SSm', sans-serif;
+			font-size: 20px;
+			text-align-last:center;
+			-webkit-appearance: none;
 		}
 
 	</style>

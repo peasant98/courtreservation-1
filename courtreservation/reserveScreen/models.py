@@ -8,6 +8,7 @@ but for testing purposes this is what I will be testing with right now
 '''
 class Court(models.Model):
     courtNum=models.IntegerField(default=0)
+    courtreserved= models.BooleanField(default=False)
     '''
     team1=models.manytomany(Team)
     team2=models.manytomany(Team)
@@ -20,7 +21,7 @@ class Court(models.Model):
     def __str__(self):
         return 'Court'+str(self.courtNum)
 
-class Team(models.Model):
+class Teamers(models.Model):
     p1=models.CharField(max_length=250)
     p2=models.CharField(max_length=250)
     p3=models.CharField(max_length=250)
@@ -28,6 +29,9 @@ class Team(models.Model):
     p5=models.CharField(max_length=250)
 
     court=models.ForeignKey(Court,on_delete=models.CASCADE)
+    
+    def __str__(self):
+        return self.p1
 
 
 

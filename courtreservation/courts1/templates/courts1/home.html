@@ -1,223 +1,421 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-<head>
-<title>Court Reservation</title>
-<script language = "javascript">
-	function testResults(form)
-	{
-		int courtsOpen = 6;
-		if(courtsOpen >= 1)
-		{
-			"/reserve";
-			courtsOpen--;
-		}
-		else
-		{
-			alert ("There is no open courts at the moment. Please try again later!");
-		}
-	}
-</script>
-<meta charset="iso-8859-1">
-<!--<link rel="stylesheet" href="styles/layout.css" type="text/css"> -->
 
-</head>
-	<style>
-		.blackM8
-		{
-			width: 100%;
-			background-color: black;
-			height: 100%;
-		}
-		div.container {
-			width: 100%;
-			//border: 0px solid gray;
-			height: 100%;
-		}
-		header{
-			padding: 1em;
-			color: white;
-			background-color: #00000;
-			//height: 5%;
-			clear: left;
-			//text-align: center;
-			overflow:hidden;
-		}
-		
-		.midPicture
-		{
-			padding: 1.5em;
-			clear: left;
-			text-align: center;
-			background-color: #272727;
-			height: 40%;
-		}
-		.midSmallWhite
-		{
-			//padding: 1em;
-			//clear: left;
-			text-align: center;
-			background-color: #ffffff;
-			height: 2.5em;
-		}
-		.midQuestion
-		{
-			//padding: 1px;
-			//padding-bottom: 0.5 em;
-			//clear: left;
-			padding: 2px;
-			background-color: #ffffff;
-			//height: 70px;
-			height: 1%;
-			text-align: center;
-		}
-		.midSmallGray
-		{
-			padding: 1em;
-			//clear: left;
-			text-align: center;
-			background-color: #272727;
-			//height: 4em;
-			height: 1%;
-		}
-		.midRegular
-		{
-			padding: 0.001em;
-			//clear: left;
-			text-align: center;
-			background-color: #ffffff;
-			//height: 7em;
-		}
-		.footer {
-			padding: 1em;
-			color: white;
-			background-color: #000000;
-			clear: left;
-			text-align: center;
-			
-			margin-bottom: 0;
-			bottom: 0;
-			font-family: 'Gotham SSm',sans-serif;
-		}
-		.verticalCenter
-		{
-			margin-left: auto;
-			margin-right: auto;
-			width: 60%;
-			height: 100%;
-			background-color: black;
-		}
-		
-		p
-		{
-			font-family:'Gotham SSm', sans-serif;
-			font-size: 30px;
-		}
-		body 
-		{ 
-			margin:0; 
-		}
-		input {
-			border: 1;
-			border-radius: 1;
-			background: black;
-			color: white;
-			height: 50px;
-			width: 100px;
-			font-size: 25px;
-			-webkit-appearance: none;
-		}
-		select
-		{
-			border: 1;
-			border-radius: 1;
-			background: black;
-			color: white;
-			height: 50px;
-			width: 100px;
-			font-size: 25px;
-			text-align-last:center;
-			-webkit-appearance: none;
-		}
-	</style>
-<body>
-	<div class = "blackM8">
-	<!--<div class ="verticalCenter"> -->
-		<div class="container">
+  <head>
+    <title>Court Reservation</title>
+    <script language="javascript">
+      function testResults(form) {
+        int courtsOpen = 6;
+        if (courtsOpen >= 1) {
+          "/reserve";
+          courtsOpen--;
+        } else {
+          alert("There is no open courts at the moment. Please try again later!");
+        }
+      }
 
-			<header>
+    </script>
+    <meta charset="iso-8859-1">
+    <!--<link rel="stylesheet" href="styles/layout.css" type="text/css"> -->
 
-					<a href="/"><img src="http://boulder.startupweek.co/wp-content/uploads/sites/23/2016/05/CU-Boulder.png" height = "40%" width= "40%"></a>
+  </head>
+  <style>
+    html {
+      background-color: #000;
+    }
 
-			<!--<a href="/reserve/">Go Here for Some Facts</a>-->
-			</header>
-			 <!--
+    .blackM8 {
+      width: 100%;
+      background-color: white;
+      height: 100%;
+    }
+
+    div.container {
+      width: 100%;
+      min-height: 100%;
+      height: auto !important;
+      height: 100%;
+    }
+
+    header {
+      padding: 1em;
+      color: white;
+      background-color: #00000;
+      clear: left;
+      overflow: hidden;
+    }
+
+    .midPicture {
+      padding-top: 1.5em;
+      padding-bottom: 0.5em;
+      background-color: #272727;
+    }
+
+    .midSmallWhite {
+      text-align: center;
+      background-color: #ffffff;
+      height: 4em;
+    }
+
+    .midQuestion {
+      padding: 2px;
+      background-color: #ffffff;
+      height: 1%;
+      text-align: center;
+    }
+
+    .midSmallGray {
+      padding: 1em;
+      text-align: center;
+      background-color: #272727;
+      height: 2%;
+    }
+
+    .midRegular {
+      padding: 0.001em;
+      text-align: center;
+      background-color: #ffffff;
+    }
+
+    h1 {
+      background: 0 0;
+      border: 0;
+      width: 100%;
+      height: 100%;
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+      border-radius: 0;
+      padding-right: 30px;
+      font-family: 'Calibri Light', sans-serif;
+      font-size: 50px;
+      font-weight: 400;
+      color: #000;
+      letter-spacing: .05em;
+      border-bottom: 1px solid rgba(255, 255, 255, .7);
+      -webkit-transition: border-color 300ms cubic-bezier(.694, 0, .335, 1);
+      -o-transition: border-color 300ms cubic-bezier(.694, 0, .335, 1);
+      transition: border-color 300ms cubic-bezier(.694, 0, .335, 1);
+    }
+
+    .footer {
+      position: relative;
+      width: 100% overflow:hidden;
+      padding: 1em;
+      color: white;
+      background-color: #000000;
+      clear: both;
+      text-align: center;
+      bottom: 0;
+      font-weight: 300;
+      letter-spacing: normal;
+      text-transform: none;
+      font-family: 'Calibri Light', sans-serif;
+      height: 100% auto;
+    }
+
+    .verticalCenter {
+      margin-left: auto;
+      margin-right: auto;
+      width: 60%;
+      height: 100%;
+      background-color: white;
+    }
+
+    p {
+      font-weight: 100;
+      letter-spacing: normal;
+      text-transform: none;
+      font-family: 'Calibri Light', sans-serif;
+      font-size: 30px;
+      letter-spacing: .05em;
+    }
+
+    body {
+      margin: 0;
+      height: 100%;
+    }
+
+    input {
+      font-weight: 300;
+      letter-spacing: normal;
+      text-transform: none;
+      font-family: 'Calibri Light', sans-serif;
+      border: 0;
+      border-radius: 4px;
+      background: #C7B378;
+      color: #1A1919;
+      height: 30px;
+      width: 100px;
+      font-size: 20px;
+      -webkit-appearance: none;
+    }
+
+    select {
+      border: 0;
+      border-radius: 4px;
+      background: #C7B378;
+      color: #1A1919;
+      height: 30px;
+      width: 80px;
+      font-weight: 200;
+      letter-spacing: normal;
+      text-transform: none;
+      font-family: 'Calibri Light', sans-serif;
+      font-size: 20px;
+      text-align-last: center;
+      -webkit-appearance: none;
+    }
+
+    * {
+      box-sizing: border-box
+    }
+
+    body {
+      font-family: 'Calibri Light', sans-serif;
+      margin: 0
+    }
+
+    .mySlides {
+      display: none
+    }
+
+    img {
+      vertical-align: middle;
+    }
+
+    /* Slideshow container */
+
+    .slideshow-container {
+      max-width: 700px;
+      position: relative;
+      margin: auto;
+    }
+
+    /* Next & previous buttons */
+
+    .prev,
+    .next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      width: auto;
+      padding: 16px;
+      margin-top: -22px;
+      color: white;
+      font-weight: bold;
+      font-size: 18px;
+      transition: 0.6s ease;
+      border-radius: 0 3px 3px 0;
+    }
+
+    /* Position the "next button" to the right */
+
+    .next {
+      right: 0;
+      border-radius: 3px 0 0 3px;
+    }
+
+    /* On hover, add a black background color with a little bit see-through */
+
+    .prev:hover,
+    .next:hover {
+      background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    /* The dots/bullets/indicators */
+
+    .dot {
+      cursor: pointer;
+      height: 15px;
+      width: 15px;
+      margin: 0 2px;
+      background-color: #bbb;
+      border-radius: 50%;
+      display: inline-block;
+      transition: background-color 0.6s ease;
+    }
+
+    .active,
+    .dot:hover {
+      background-color: #717171;
+    }
+
+    /* Fading animation */
+
+    .fade {
+      -webkit-animation-name: fade;
+      -webkit-animation-duration: 1.5s;
+      animation-name: fade;
+      animation-duration: 1.5s;
+    }
+
+    @-webkit-keyframes fade {
+      from {
+        opacity: .4
+      }
+      to {
+        opacity: 1
+      }
+    }
+
+    @keyframes fade {
+      from {
+        opacity: .4
+      }
+      to {
+        opacity: 1
+      }
+    }
+
+    /* On smaller screens, decrease text size */
+
+    @media only screen and (max-width: 300px) {
+      .prev,
+      .next,
+      .text {
+        font-size: 11px
+      }
+    }
+
+  </style>
+
+  <body>
+    <div class="blackM8">
+      <!--<div class ="verticalCenter"> -->
+      <div class="container">
+
+        <header>
+
+          <a href="/"><img src="http://boulder.startupweek.co/wp-content/uploads/sites/23/2016/05/CU-Boulder.png" height = "40%" width= "40%"></a>
+
+          <!--<a href="/reserve/">Go Here for Some Facts</a>-->
+        </header>
+        <!--
 			  <h1>R</h1>
 			  -->
 
-			<div class = "midSmallWhite">
+        <div class="midSmallWhite">
 
-				<h1 style = "font-family: 'Gotham SSm',sans-serif">Basketball Court Reservation System</h1></br>
-			</div>
-			
+          <h1>Basketball Court Reservation System</h1>
+          <br></br>
+          </br>
+        </div>
+        <!--
 			<div class = "midPicture">
-				<!-- https://i1.wp.com/www.leadersayswhat.com/wp-content/uploads/2015/04/Michael-Jordan-dunk.jpg  -->
-				<img class = "mySlides" src="http://hdfreewallpaper.net/wp-content/uploads/2015/07/basketball-player-slam-dunk-high-resolution-wallpaper-desktop-background-images-full-free.jpg" style="height:60%" width= "42%" style ="margin:0px auto"> 
+				<!-- https://i1.wp.com/www.leadersayswhat.com/wp-content/uploads/2015/04/Michael-Jordan-dunk.jpg  
+				<img class = "mySlides" src="http://hdfreewallpaper.net/wp-content/uploads/2015/07/basketball-player-slam-dunk-high-resolution-wallpaper-desktop-background-images-full-free.jpg" style="height:100%" width= "42%" style ="margin:0px auto"> 
 				<img class = "mySlides" src="https://mk0slamonlinensgt39k.kinstacdn.com/wp-content/uploads/2017/02/glenn_robinson_iii_fb.jpg" style="height:100%" width= "45%" style ="margin:0px auto">
-			</div>
-			  
-			<script>
-				var myIndex = 0;
-				slideShow();
+			</div> -->
+        <div class="midPicture">
+          <div class="slideshow-container">
 
-				function slideShow() 
-				{
-					var i;
-					var x = document.getElementsByClassName("mySlides");
-					for (i = 0; i < x.length; i++) {
-					   x[i].style.display = "none"; 
-					   x[i].style.margin = "0px auto";
-					}
-					myIndex++;
-					if (myIndex > x.length) {myIndex = 1}    
-					x[myIndex-1].style.display = "block";  
-					setTimeout(slideShow, 2000); // Change image every 2 seconds
-				}
-			</script>
-			  
-			<div class = "midQuestion">			
-				
-				<!--<p>I am playing solo
+            <div class="mySlides fade">
+              <img src="http://hdfreewallpaper.net/wp-content/uploads/2015/07/basketball-player-slam-dunk-high-resolution-wallpaper-desktop-background-images-full-free.jpg" height="400em" width="100%" style="margin:0px auto">
+            </div>
+
+            <div class="mySlides fade">
+              <img src="https://mk0slamonlinensgt39k.kinstacdn.com/wp-content/uploads/2017/02/glenn_robinson_iii_fb.jpg" height="400em" width="100%" style="margin:0px auto">
+            </div>
+
+
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            <br>
+
+            <div style="text-align:center">
+              <span class="dot" onclick="currentSlide(1)"></span>
+              <span class="dot" onclick="currentSlide(2)"></span>
+            </div>
+
+          </div>
+        </div>
+        <script>
+          var myIndex = 0;
+          slideShow();
+
+          function slideShow() {
+            var i;
+            var x = document.getElementsByClassName("mySlides");
+            for (i = 0; i < x.length; i++) {
+              x[i].style.display = "none";
+              x[i].style.margin = "0px auto";
+            }
+            myIndex++;
+            if (myIndex > x.length) {
+              myIndex = 1
+            }
+            x[myIndex - 1].style.display = "block";
+            setTimeout(slideShow, 3000); // Change image every 2 seconds
+          }
+
+          var slideIndex = 1;
+          showSlides(slideIndex);
+
+          function plusSlides(n) {
+            showSlides(slideIndex += n);
+          }
+
+          function currentSlide(n) {
+            showSlides(slideIndex = n);
+          }
+
+          function showSlides(n) {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("dot");
+            if (n > slides.length) {
+              slideIndex = 1
+            }
+            if (n < 1) {
+              slideIndex = slides.length
+            }
+            for (i = 0; i < slides.length; i++) {
+              slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+              dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+          }
+
+        </script>
+
+        <div class="midQuestion">
+
+          <!--<p>I am playing solo
 				<input type="checkbox" name="solo" value="Solo"> </p>
 				</input>
 				<!--<p>We are playing in group
 						<input type="checkbox" name="group" value="Group"> </p>-->
-				<p style= "font-family: 'Gotham SSm',sans-serif">
-				How many members do you have in your team?</p>
-			</div>
-			
-			<div class = "midSmallGray">
-				<form action="/courts1/finder/" method="POST">
-					{% csrf_token %}
-					<select name="testing">
+          <p style="font-family: 'Calibri',sans-serif">
+            How many people are on your team?</p>
+        </div>
+
+        <div class="midSmallGray">
+          <form action="/courts1/finder/" method="POST">
+            {% csrf_token %}
+            <select name="testing">
 					  <option value="one">1</option>
 					  <option value="two">2</option>
 					  <option value="three">3</option>
 					  <option value="four">4</option>
 					  <option value="five">5</option>
 					</select>
-					<input type="submit" value="Submit" name="value">
-				</form>
-			</div>
-			
-			  <!--
+            <input type="submit" value="Submit" name="value">
+          </form>
+        </div>
+
+        <!--
 			  <p>I</p>
 			  -->
 
-			<div class = "footer">Copyright &copy; CU Boulder</div>
 
-		</div>
-	<!--</div>-->
-	</div>
+      </div>
+      <!--</div>-->
+      <div class="footer">Copyright &copy; CU Boulder</div>
+    </div>
 
-</body>
+  </body>
+
 </html>
