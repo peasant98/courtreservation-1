@@ -5,9 +5,10 @@ import themethod as tm
 # Create your views here.
 def testy(request):
     courtplayedon=tm.assigner()
-    try:
-        thecourtnum=courtplayedon.courtNum
-        print(thecourtnum)
-        return render(request, 'reserver/courtsdisplay.html',{'courtnum':thecourtnum})
-    except:
-        return HttpResponse("error")
+    print(courtplayedon)
+    if courtplayedon==0:
+        istherecourts=False
+    else:
+        istherecourts=True
+    return render(request, 'reserver/courtsdisplay.html',{'courtnum':courtplayedon ,'courts':istherecourts })
+    

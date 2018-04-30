@@ -10,6 +10,7 @@ from django.http import Http404
 from django.http import HttpResponse
 from django.shortcuts import render
 from courts1.models import Team, Player, Loaded_Team
+from django.shortcuts import redirect
 # is there are way to import other models from the other app??
 #from courtreservation/courtsv1 import models
 import random as rn
@@ -140,7 +141,8 @@ def finder(request):
                 second_team = all_loaded[len(all_loaded)-2]
                 first_players = first_team.player_set.all()
                 second_players = second_team.player_set.all()
-                return render(request,'courts1/display_Courts.html', {'first_team': first_team, 'second_team': second_team, 'first_players': first_players, 'second_players': second_players})
+                return redirect('/reserver')
+                #return render(request,'courts1/display_Courts.html', {'first_team': first_team, 'second_team': second_team, 'first_players': first_players, 'second_players': second_players})
             else:
                 current_players = inqueue_team.player_set.all()
                 return render(request, 'courts1/wait_for_another.html', {'inqueue_team': inqueue_team, 'current_players': current_players})
