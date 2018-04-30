@@ -148,7 +148,7 @@
 			<!--<a href="/">Go Here for Some Facts</a>-->
 			</header>
 
-			{% if courts%}
+			{% if courts %}
 				<script>
 					window.onload = function(){    
 						var a = "{{courtnum}}";
@@ -157,7 +157,7 @@
 				</script>
 			{% endif %}
 	
-			{% if courts is False%}
+			{% if not courts %}
 				<script>
 					window.onload = function(){    
 						var a = "{{courtnum}}";
@@ -215,20 +215,3 @@
 
 </body>
 </html>
-<!--
-<!Doctype html>
-<html>
-	<head>
-
-	</head>
-	<body>
-		{% if courts%}
-		<p>You have been assigned to play  on {{courtnum}}</p>
-		{% endif %}
-
-		{% if courts is False%}
-		<p>There are no courts available!</p>
-		{% endif %}
-	</body>
-</html>
--->
