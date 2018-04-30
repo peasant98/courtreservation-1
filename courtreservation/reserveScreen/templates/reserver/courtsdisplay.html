@@ -1,9 +1,234 @@
+<!DOCTYPE html>
+{% load static %} <!-- New line -->
+<html lang="en" dir="ltr">
+<head>
+<title>Court Reservation</title>
+<script language = "javascript">
+
+	
+	function showReserved(num)
+	{
+		var elId=""
+		if(num==1)
+		{
+			elId="one";
+		}
+		else if(num==2)
+		{
+			elId="two";
+		}
+		else if(num==3)
+		{
+			elId="three";
+		}
+		var img = document.getElementById(elId);
+		img.style.visibility= 'visible';
+	}
+	function picker(a)
+	{
+		if(a==1)
+		{
+			alert("You have reserved the top left court!");
+			showReserved(a);
+		}
+		else if(a==2)
+		{
+			alert ("You have reserved the top center court!");
+			showReserved(a);
+		}
+		else if(a==3)
+		{
+			alert ("You have reserved the top right court!");
+			showReserved(a);
+		}
+		else if(a==0)
+		{
+			alert ("No court for you!");
+		}
+	}
+</script>
+<meta charset="iso-8859-1">
+<!--<link rel="stylesheet" href="styles/layout.css" type="text/css"> -->
+
+</head>
+	<style>
+
+		.blackM8
+		{
+			width: 100%;
+			background-color: black;
+			height: 100%;
+		}
+
+		div.container {
+			width: 100%;
+			//border: 0px solid gray;
+			height: 100%;
+		}
+
+		header{
+			padding: 1em;
+			color: white;
+			background-color: #CFB87C;
+			//height: 5%;
+			clear: left;
+			text-align: center;
+			overflow:hidden;
+		}
+
+		.mid
+		{
+			padding: 1em;
+			clear: left;
+			text-align: center;
+			background-color: #A2A4A3;
+		}
+
+		.footer {
+			padding: 1em;
+			color: white;
+			background-color: #CFB87C;
+			clear: left;
+			text-align: center;
+			
+			margin-bottom: 0;
+			bottom: 0;
+		}
+
+		.verticalCenter
+		{
+			margin-left: auto;
+			margin-right: auto;
+			width: 60%;
+			height: 100%;
+			background-color: black;
+		}
+		
+		p
+		{
+			font-family:"Baskerville";
+			font-size: 30px;
+		}
+
+		.rotateImages
+		{
+			-webkit-transform:rotate(180deg); /* Chrome, Safari, Opera */
+			transform:rotate(180deg); /* Standard syntax */
+		}
+
+		#one{
+			position: absolute;
+			top:560px;
+			left:660px;
+			visibility: hidden;
+		}
+		#two{
+			position: absolute;
+			top:560px;
+			left:900px;
+			visibility: hidden;
+		}
+		#three{
+			position: absolute;
+			top:560px;
+			left:1100px;
+			visibility: hidden;
+		}
+	</style>
+<body>
+	<div class = "blackM8">
+	<div class ="verticalCenter">
+		<div class="container">
+
+			<header>
+				<h1>
+					{% load static %}
+					<a href="/"><img src="http://boulder.startupweek.co/wp-content/uploads/sites/23/2016/05/CU-Boulder.png" height = "60%" width= "80%"></a>
+				</h1>
+			<!--<a href="/">Go Here for Some Facts</a>-->
+			</header>
+
+			{% if courts%}
+				<script>
+					window.onload = function(){    
+						var a = "{{courtnum}}";
+						picker(a);
+					}
+				</script>
+			{% endif %}
+	
+			{% if courts is False%}
+				<script>
+					window.onload = function(){    
+						var a = "{{courtnum}}";
+						picker(a);
+					}
+				</script>
+			{% endif %}
+
+			<div class = "mid"><!--
+				<form action="" method="get">
+				<p>I am playing solo
+				<input type="checkbox" name="solo" value="Solo"> </p>
+				</input>
+				<br>
+				<p>
+				How many members do you have in your team?</p>
+				
+				<input type="text" name="team" value="4" checked="checked">
+				<input type="submit" value="Submit">
+				</form>-->
+
+				<h1>You have been assigned to play on the court with the green check.</h1></br></br>
+
+				
+				<img src="https://st2.depositphotos.com/2021995/9203/v/950/depositphotos_92033288-stock-illustration-realistic-vertical-basketball-court-illustration.jpg" id="topRight" height = "25%" width= "20%">
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<div id="one">
+						<img src=https://emojipedia-us.s3.amazonaws.com/thumbs/120/microsoft/106/heavy-check-mark_2714.png>
+				</div>
+				<img src="https://st2.depositphotos.com/2021995/9203/v/950/depositphotos_92033288-stock-illustration-realistic-vertical-basketball-court-illustration.jpg" id="topCenter" height = "25%" width= "20%">
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<div id="two">
+						<img src=https://emojipedia-us.s3.amazonaws.com/thumbs/120/microsoft/106/heavy-check-mark_2714.png>
+				</div>
+				<img src="https://st2.depositphotos.com/2021995/9203/v/950/depositphotos_92033288-stock-illustration-realistic-vertical-basketball-court-illustration.jpg" id="topRight" height = "25%" width= "20%">
+				<div id="three">
+						<img src=https://emojipedia-us.s3.amazonaws.com/thumbs/120/microsoft/106/heavy-check-mark_2714.png>
+				</div>
+				</br>
+				</br></br>
+
+				<img src = "https://i1.wp.com/www.leadersayswhat.com/wp-content/uploads/2015/04/Michael-Jordan-dunk.jpg" height = "40%" width = "100%"> 
+				<!--<img src="http://hdfreewallpaper.net/wp-content/uploads/2015/07/basketball-player-slam-dunk-high-resolution-wallpaper-desktop-background-images-full-free.jpg" height = "40%" width= "100%"> -->
+			  
+			</div>
+			  <!--
+			  <p>I</p>
+			  -->
+
+			<div class = "footer">Copyright &copy; CU Boulder</div>
+
+		</div>
+	</div>
+	</div>
+
+</body>
+</html>
+<!--
 <!Doctype html>
 <html>
 	<head>
 
 	</head>
 	<body>
+		{% if courts%}
 		<p>You have been assigned to play  on {{courtnum}}</p>
+		{% endif %}
+
+		{% if courts is False%}
+		<p>There are no courts available!</p>
+		{% endif %}
 	</body>
 </html>
+-->
