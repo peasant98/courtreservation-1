@@ -172,7 +172,8 @@ def run_queue_analysis(value):
                         
                     first_loaded_team = Loaded_Team.objects.create(team_name=full_teamname, defense='good', offense='noobs', team_pic='Fine players', members=5)
                     for i in T1.players:
-                        first_loaded_team.player_set.create(loaded_team=first_loaded_team, file_type='.png', player_name=i.player_name)
+                        first_loaded_team.player_set.create(loaded_team=first_loaded_team, file_type='.png', player_name=i.player_name, player_lt_value=i.pk)
+                        print i.pk
                     #first_player.team.delete()
                     deletedAllPairedGroups = False
                     numGroupsDeleted = 0
@@ -206,7 +207,7 @@ def run_queue_analysis(value):
                     print ("Created Team 1-D")
                     completedTeam1 = True
                     justFormedATeam = True
-                    return first_loaded_team
+                    return first_loaded_team, first_player
 
                 elif completedTeam2 == False and completedTeam1 == True:
                     for k in range(0, len(indicesOfGroupsPairing)):
@@ -224,7 +225,8 @@ def run_queue_analysis(value):
                     
                     second_loaded_team = Loaded_Team.objects.create(team_name=full_teamname, defense='good', offense='noobs', team_pic='Fine players', members=5)
                     for i in T2.players:
-                        second_loaded_team.player_set.create(loaded_team=second_loaded_team, file_type='.png', player_name=i.player_name)
+                        second_loaded_team.player_set.create(loaded_team=second_loaded_team, file_type='.png', player_name=i.player_name, player_lt_value=i.pk)
+                        print i.pk
                     deletedAllPairedGroups = False
                     numGroupsDeleted = 0
                     
@@ -254,7 +256,7 @@ def run_queue_analysis(value):
                     print ("Created Team 2-D")
                     completedTeam2 = True
                     justFormedATeam = True
-                    return second_loaded_team
+                    return second_loaded_team, first_player
 
             if justFormedATeam == False:
                 queueOfGroups.append(newGroup)
@@ -267,6 +269,7 @@ def run_queue_analysis(value):
                     printQueue(queueOfGroups)
                 else:
                     print ("There are no remaining groups")
+            return 0, first_player
                 #return T1, T2
         elif int(option) == 5:
             value = int(option)
@@ -307,9 +310,11 @@ def run_queue_analysis(value):
                     print(namedPlayer)
                 first_loaded_team = Loaded_Team.objects.create(team_name=full_teamname, defense='good', offense='noobs', team_pic='Fine players', members=5)
                 for i in T1.players:
-                    first_loaded_team.player_set.create(loaded_team=first_loaded_team, file_type='.png', player_name=i.player_name)
+                    first_loaded_team.player_set.create(loaded_team=first_loaded_team, file_type='.png', player_name=i.player_name, player_lt_value=i.pk)
+                    print i.pk
                     
                     # create new copy of player in loaded team maybe??
+                bob = T1.players[0]
                 T1.players[0].team.delete()    
                     
 
@@ -320,7 +325,7 @@ def run_queue_analysis(value):
                 print ("Created Team 1-F")
                 completedTeam1 = True
                 justFormedATeam = True
-                return first_loaded_team
+                return first_loaded_team, bob
 
             elif completedTeam2 == False and completedTeam1 == True:
                     
@@ -358,7 +363,8 @@ def run_queue_analysis(value):
                     print(namedPlayer)
                 second_loaded_team = Loaded_Team.objects.create(team_name=full_teamname, defense='good', offense='noobs', team_pic='Fine players', members=5)
                 for i in T1.players:
-                    second_loaded_team.player_set.create(loaded_team=second_loaded_team, file_type='.png', player_name=i.player_name)
+                    second_loaded_team.player_set.create(loaded_team=second_loaded_team, file_type='.png', player_name=i.player_name, player_lt_value=i.pk)
+                    print i.pk
                     
                     # create new copy of player in loaded team maybe??
                 T1.players[0].team.delete()  
@@ -366,7 +372,7 @@ def run_queue_analysis(value):
                 print("Created Team 2-F")
                 completedTeam2 = True
                 justFormedATeam = True 
-                return second_loaded_team
+                return second_loaded_team, bob
             if completedTeam1 == True and completedTeam2 == True:
                 startingGame = True
                 print ("A game will start")
@@ -402,6 +408,9 @@ def run_queue_analysis(value):
                 newGroup.numPlayers = newGroup.numPlayers + 1
             html = ("<h1> Team is here, it looks like! </h1>" + " and the team name is " + str(full_teamname))
             all_players = Player.objects.all()
+            ########################
+            bob = newGroup.players[0]
+            ############################ very important here
             print(team1)
 
             #or i in range(0, int(option)):
@@ -461,7 +470,8 @@ def run_queue_analysis(value):
 
                         first_loaded_team = Loaded_Team.objects.create(team_name=full_teamname, defense='good', offense='noobs', team_pic='Fine players', members=5)
                         for i in T1.players:
-                            first_loaded_team.player_set.create(loaded_team=first_loaded_team, file_type='.png', player_name=i.player_name)
+                            first_loaded_team.player_set.create(loaded_team=first_loaded_team, file_type='.png', player_name=i.player_name, player_lt_value=i.pk)
+                            print i.pk
                     
                         # create new copy of player in loaded team maybe??
                         #T1.players[0].team.delete()  
@@ -496,7 +506,7 @@ def run_queue_analysis(value):
                         print ("Created Team 1-E")
                         completedTeam1 = True
                         justFormedATeam = True 
-                        return first_loaded_team
+                        return first_loaded_team, bob
 
                     elif completedTeam2 == False and completedTeam1 == True:
                         for k in range(0, len(indicesOfGroupsPairing)):
@@ -516,7 +526,8 @@ def run_queue_analysis(value):
 
                         second_loaded_team = Loaded_Team.objects.create(team_name=full_teamname, defense='good', offense='noobs', team_pic='Fine players', members=5)
                         for i in T2.players:
-                            second_loaded_team.player_set.create(loaded_team=second_loaded_team, file_type='.png', player_name=i.player_name)
+                            second_loaded_team.player_set.create(loaded_team=second_loaded_team, file_type='.png', player_name=i.player_name, player_lt_value=i.pk)
+                            print i.pk
 
                         deletedAllPairedGroups = False
                         numGroupsDeleted = 0
@@ -545,7 +556,7 @@ def run_queue_analysis(value):
                         
                         completedTeam2 = True
                         justFormedATeam = True 
-                        return second_loaded_team
+                        return second_loaded_team, bob
         
             #this is case 2 where there's already one group waiting and adding another group 
             #to them would form a team
@@ -560,7 +571,8 @@ def run_queue_analysis(value):
 
                         first_loaded_team = Loaded_Team.objects.create(team_name=full_teamname, defense='good', offense='noobs', team_pic='Fine players', members=5)
                         for i in T1.players:
-                            first_loaded_team.player_set.create(loaded_team=first_loaded_team, file_type='.png', player_name=i.player_name)
+                            first_loaded_team.player_set.create(loaded_team=first_loaded_team, file_type='.png', player_name=i.player_name, player_lt_value=i.pk)
+                            print i.pk
                         team_arr = []
                         for c in queueOfGroups[i].players:
                             team_value = c.team.pk
@@ -578,7 +590,7 @@ def run_queue_analysis(value):
                         print ("Created Team 1-B")
                         completedTeam1 = True
                         justFormedATeam = True
-                        return first_loaded_team
+                        return first_loaded_team, bob
 
                     elif queueOfGroups[i].numPlayers + newGroup.numPlayers == 5 and completedTeam2 == False:
                         for x in range (0, queueOfGroups[i].numPlayers):
@@ -588,7 +600,8 @@ def run_queue_analysis(value):
                         team_arr = []
                         second_loaded_team = Loaded_Team.objects.create(team_name=full_teamname, defense='good', offense='noobs', team_pic='Fine players', members=5)
                         for i in T2.players:
-                            second_loaded_team.player_set.create(loaded_team=second_loaded_team, file_type='.png', player_name=i.player_name)
+                            second_loaded_team.player_set.create(loaded_team=second_loaded_team, file_type='.png', player_name=i.player_name, player_lt_value=i.pk)
+                            print i.pk
                         for c in queueOfGroups[i].players:
                             team_value = c.team
                             print team_value
@@ -606,7 +619,7 @@ def run_queue_analysis(value):
                         print ("Created Team 2-B")
                         completedTeam2 = True
                         justFormedATeam = True
-                        return second_loaded_team
+                        return second_loaded_team, bob
                 
             if justFormedATeam == False:
                 queueOfGroups.append(newGroup)
@@ -621,6 +634,7 @@ def run_queue_analysis(value):
                 else:
                     print ("There are no remaining groups")
                 return T1, T2
+            return 0, bob
         else:
             print "Invalid amount of players!"
             print "Nothing will entered into the database, you noob!!!!"

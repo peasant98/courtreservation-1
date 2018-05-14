@@ -1,3 +1,69 @@
-{%for team in teams%}
-<p>{{team.team_name}} {%if team.isplaying%} are playing on {{team.court_id.courtNum}} {%endif%} {%if not team.isplaying%} is not playing {%endif%}</p>
-{%endfor%}
+<head>
+    <title> You are in a Game!</title>
+    <style>
+        #hallo{
+            visibility: hidden;
+            
+        }
+    </style>
+    
+
+
+
+
+</head>
+
+
+
+<body>
+        <div id="seconds-counter"><b>Commencing Game Timer.....</b></div>
+        <script type="text/javascript">
+            var seconds = 0;
+    var el = document.getElementById('seconds-counter');
+    
+    function incrementSeconds() {
+        seconds += 1;
+        el.innerText = "You have been here for " + Math.floor(seconds/60) + " minutes.";
+        if(seconds>=1800){
+            el.innerText = "The time of the game is up! You will now go back to the homepage. Hope that you enjoyed the game.";
+            var frm = document.getElementById("hallo");
+            frm.style.visibility = "visible";
+
+            if(seconds>=1810){
+                el.innerText = "Bye!";
+                var frm = document.getElementById("hallo");
+                frm.click();
+                clearInterval(cancel);
+            }
+            
+        }
+        
+    }
+    
+    var cancel = setInterval(incrementSeconds, 1000);
+    // will use this later, to see if page was reloaded, which is what we don't want
+    if (window.performance) {
+  console.info("window.performance works fine on this browser");
+}
+  if (performance.navigation.type == 1) {
+    console.info( "This page is reloaded" );
+  } else {
+    console.info( "This page is not reloaded");
+  }
+        </script>
+    <h1>
+        You have 20 minutes for your Game. Enjoy!
+    </h1
+    {%for team in teams%}
+    <p>{{team.team_name}} {%if team.isplaying%} are playing on {{team.court_id.courtNum}} {%endif%} {%if not team.isplaying%} is not playing {%endif%}</p>
+    {%endfor%}
+    <b>And your team name is.... {{yo_team}} </b>
+    
+    
+    <form action="/courts1">
+        <input type="submit" id="hallo" value="Go Back to The Main Page">
+        
+    </form>
+    </body>
+
+
