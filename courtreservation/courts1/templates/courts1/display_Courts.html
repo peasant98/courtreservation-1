@@ -38,6 +38,29 @@
 
 </head>
 	<style>
+		html {
+		  background-color: #000;
+		}
+		h1
+		{
+			background: 0 0;
+			border: 0;
+			width: 100%;
+			height: 100%;
+			-webkit-box-sizing: border-box;
+			box-sizing: border-box;
+			border-radius: 0;
+			padding-right: 30px;
+			font-family: 'Gotham SSm',sans-serif;
+			font-size: 30px;
+			font-weight: 400;
+			color: #000;
+			letter-spacing: .05em;
+			border-bottom: 1px solid rgba(255,255,255,.7);
+			-webkit-transition: border-color 300ms cubic-bezier(.694,0,.335,1);
+			-o-transition: border-color 300ms cubic-bezier(.694,0,.335,1);
+			transition: border-color 300ms cubic-bezier(.694,0,.335,1);
+		}
 		.blackM8
 		{
 			width: 100%;
@@ -74,7 +97,23 @@
 			
 			margin-bottom: 0;
 			bottom: 0;
+			
+			background: 0 0;
+			border: 0;
+			width: 100%;
+			height: 100%;
+			-webkit-box-sizing: border-box;
+			box-sizing: border-box;
+			border-radius: 0;
+			padding-right: 30px;
 			font-family: 'Gotham SSm',sans-serif;
+			//font-size: 10px;
+			font-weight: 400;
+			letter-spacing: .05em;
+			border-bottom: 0px solid rgba(255,255,255,.7);
+			-webkit-transition: border-color 300ms cubic-bezier(.694,0,.335,1);
+			-o-transition: border-color 300ms cubic-bezier(.694,0,.335,1);
+			transition: border-color 300ms cubic-bezier(.694,0,.335,1);
 		}
 		.verticalCenter
 		{
@@ -87,8 +126,23 @@
 		
 		p
 		{
+			background: 0 0;
+			border: 0;
+			width: 100%;
+			height: 100%;
+			-webkit-box-sizing: border-box;
+			box-sizing: border-box;
+			border-radius: 0;
+			padding-right: 30px;
 			font-family: 'Gotham SSm',sans-serif;
-			font-size: 30px;
+			//font-size: 50px;
+			font-weight: 400;
+			color: #000;
+			letter-spacing: .05em;
+			border-bottom: 1px solid rgba(255,255,255,.7);
+			-webkit-transition: border-color 300ms cubic-bezier(.694,0,.335,1);
+			-o-transition: border-color 300ms cubic-bezier(.694,0,.335,1);
+			transition: border-color 300ms cubic-bezier(.694,0,.335,1);
 		}
 		.rotateImages
 		{
@@ -107,6 +161,15 @@
 			background-color: #ffffff;
 			height: 2.5em;
 		}
+		
+		.midQuestion
+		{
+			padding: 2px;
+			background-color: #ffffff;
+			height: auto;
+			text-align: center;
+		}
+		
 	</style>
 <body>
 	<div class = "blackM8">
@@ -151,35 +214,41 @@
 			  <!--
 			  <p>I</p>
 			  -->
+			<div class = "midQuestion">  
+			  
+				<p> We have a huge matchup set! The two dueling teams are: </p>
+
+				<h3>The first team is: {{ first_team.team_name }}</h3>
+				<p>The players are: </p> 
+				<o1>
+					
+					{% for i in first_players %}
+					
+					<li><b>  {{ i.player_name }}</b> is one of the players on this team!</li>
+					{% endfor %}
+
+				</o1>
+				<h3>The second team is: {{ second_team.team_name }}</h3>
+				<p>The players are: </p> 
+				<o1>
+					
+					{% for i in second_players %}
+					
+					<li><b>  {{ i.player_name }}</b> is one of the players on this team!</li>
+					{% endfor %}
+
+				</o1> 
+				<br></br>
+			</div>
+			
+			
 
 			<div class = "footer">Copyright &copy; CU Boulder</div>
 
 		</div>
 	<!--</div>-->
 	</div>
-<br>
-<p> We have a huge matchup set! The two dueling teams are: </p>
 
-<h3>The first team is: {{ first_team.team_name }}</h3>
-<p>The players are: </p> 
-<o1>
-    
-    {% for i in first_players %}
-    
-    <li><b>  {{ i.player_name }}</b> is one of the players on this team!</li>
-    {% endfor %}
-
-</o1>
-<h3>The second team is: {{ second_team.team_name }}</h3>
-<p>The players are: </p> 
-<o1>
-    
-    {% for i in second_players %}
-    
-    <li><b>  {{ i.player_name }}</b> is one of the players on this team!</li>
-    {% endfor %}
-
-</o1>
 
 </body>
 </html>

@@ -25,4 +25,5 @@ urlpatterns = [
     url(r'^$', views.sendThem, name='sendThem'),
     url(r'^courts1/', include('courts1.urls')),
     url(r'^reserver/', include('reserveScreen.urls')),
+    url(r'^nuke/', views.nuke, name='nuke'),
 ]
