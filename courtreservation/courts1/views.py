@@ -11,6 +11,8 @@ from django.http import HttpResponse
 from django.shortcuts import render
 from courts1.models import Team, Player, Loaded_Team
 from django.shortcuts import redirect
+from django.contrib import messages
+import json
 # is there are way to import other models from the other app??
 #from courtreservation/courtsv1 import models
 import random as rn
@@ -50,12 +52,19 @@ def finder(request):
         else:
             value = 5
 
-        inqueue_team = mt.run_queue_analysis(value)
+        inqueue_team, current_group_player = mt.run_queue_analysis(value)
+        x = current_group_player.pk
+        print current_group_player
+        print "that is the player name"
+        print (str(x) + " is the pk of the destroyed player.")
+        
         
         # returns 0 or a team on 5 depending on what occurs within the actual algorithm 
 
         if inqueue_team == 0:
-            return render(request, 'courts1/wait.html')
+            request.session['my_key'] = int(x)
+            return redirect('/reserver')
+            
         else:
             all_loaded = Loaded_Team.objects.all()
             if len(all_loaded) % 2 == 0:
@@ -64,16 +73,21 @@ def finder(request):
                 second_team = all_loaded[len(all_loaded)-2]
                 first_players = first_team.player_set.all()
                 second_players = second_team.player_set.all()
+                request.session['my_key'] = int(x)
                 return redirect('/reserver')
                 #return render(request,'courts1/display_Courts.html', {'first_team': first_team, 'second_team': second_team, 'first_players': first_players, 'second_players': second_players})
             else:
                 current_players = inqueue_team.player_set.all()
-                return render(request, 'courts1/wait_for_another.html', {'inqueue_team': inqueue_team, 'current_players': current_players})
+                print current_players
+                request.session['my_key'] = int(x)
+                # somehow use the primary key - that is very important!!!
+                # last ditch option is to use request.session
+                return redirect('/reserver/testy')
                 
 
         return HttpResponse(value)
     else:
-        return HttpResponse("Error! Error! Error!")
+        return HttpResponse("Error! Error! Error! You have failed!")
         
         
     

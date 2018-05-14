@@ -3,7 +3,7 @@
 <html lang="en" dir="ltr">
 
   <head>
-    <title>Court Reservation</title>
+    <title>Court Reservation: You Are In a Game</title>
     <script language="javascript">
       function showReserved(num) {
         var elId = ""
@@ -24,13 +24,13 @@
 
       function picker(a) {
         if (a == 1) {
-          alert("You have reserved the top left court!");
+          alert("You have reserved the top court!");
           showReserved(a);
         } else if (a == 2) {
-          alert("You have reserved the top center court!");
+          alert("You have reserved the middle court!");
           showReserved(a);
         } else if (a == 3) {
-          alert("You have reserved the top right court!");
+          alert("You have reserved the bottom court!");
           showReserved(a);
         } else if (a == 0) {
           alert("Go home!");
@@ -151,9 +151,67 @@
 		
     }
 
+  #hallo{
+    visibility: hidden;
+            
+    }
+
   </style>
 
   <body>
+
+
+      <div id="seconds-counter"><b>Commencing Game Timer.....</b></div>
+      <script type="text/javascript">
+          var seconds = 0;
+  var el = document.getElementById('seconds-counter');
+  
+  function incrementSeconds() {
+      seconds += 1;
+      el.innerText = "You have been here for " + Math.floor(seconds/60) + " minutes.";
+      if(seconds>=1800){
+          el.innerText = "The time of the game is up! You will now go back to the homepage. Hope that you enjoyed the game.";
+          var frm = document.getElementById("hallo");
+          frm.style.visibility = "visible";
+          {{team.team_name | "Hello"}}
+
+          if(seconds>=1810){
+              el.innerText = "Bye!";
+              var frm = document.getElementById("hallo");
+              frm.click();
+              // somewhere here, we want to have the court be assigned to not being played on -  a few ways to do this.
+              clearInterval(cancel);
+          }
+          
+      }
+      
+  }
+  
+  var cancel = setInterval(incrementSeconds, 1000);
+  // will use this later, to see if page was reloaded, which is what we don't want
+  if (window.performance) {
+console.info("window.performance works fine on this browser");
+}
+if (performance.navigation.type == 1) {
+  console.info( "This page is reloaded" );
+} else {
+  console.info( "This page is not reloaded");
+}
+      </script>
+    <h1>
+        You have 20 minutes for your Game. Enjoy!
+    </h1
+    {%for team in teams%}
+    <p>{{team.team_name}} {%if team.isplaying%} are playing on {{team.court_id.courtNum}} {%endif%} {%if not team.isplaying%} is not playing {%endif%}</p>
+    {%endfor%}
+    <b>And your team name is.... {{yo_team}} </b>
+    
+    
+    <form action="/courts1">
+        <input type="submit" id="hallo" value="Go Back to The Main Page">
+        
+    </form>
+
     <div class="blackM8">
       <div class="verticalCenter">
         <div class="container">
@@ -165,23 +223,15 @@
             <!--<a href="/">Go Here for Some Facts</a>-->
           </header>
 
-          {% if courts %}
+          
           <script>
             window.onload = function() {
-              var a = "{{courtnum}}";
+              var a = "{{courtNum}}";
               picker(a);
             }
 
           </script>
-          {% endif %} {% if not courts %}
-          <script>
-            window.onload = function() {
-              var a = "{{courtnum}}";
-              picker(a);
-            }
-
-          </script>
-          {% endif %}
+          
 
           <div class="mid">
             <!--

@@ -14,10 +14,12 @@ class Loaded_Team(models.Model):
     defense = models.CharField(max_length=250)
     offense = models.CharField(max_length=100)
     team_pic = models.CharField(max_length=1000)
+    #members = models.CharField(max_length=200, null=True)
+
     members = models.CharField(max_length=200, null=True)
     court_id = models.ForeignKey(Court, on_delete=models.CASCADE, null=True)
+    isplaying=models.BooleanField(default=False)
     # this part here is very important for interfacting the two apps together in conjunction with each other. 
-    
     # this next part here is critical for the court - team interaction in the back end!
     #court = models.ForeignKey('testing.Court', on_delete=models.CASCADE, null=True)
     def __str__(self):
@@ -44,6 +46,7 @@ class Player(models.Model):
     loaded_team = models.ForeignKey(Loaded_Team, on_delete=models.CASCADE, null=True)
     file_type = models.CharField(max_length=10)
     player_name = models.CharField(max_length=200)
+    player_lt_value = models.CharField(max_length=200, null=True, default=None)
     # if you are adding or deleting attributes, then we have to do makemigrations
     # as well as everything else 
     # dealing with changes in the   database and migrate in general so that everything is synced up correctly

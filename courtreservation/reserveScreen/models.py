@@ -9,6 +9,7 @@ but for testing purposes this is what I will be testing with right now
 class Court(models.Model):
     courtNum=models.IntegerField(default=0)
     courtreserved= models.BooleanField(default=False)
+    halfreserved= models.BooleanField(default=False)
     '''
     team1=models.manytomany(Team)
     team2=models.manytomany(Team)
