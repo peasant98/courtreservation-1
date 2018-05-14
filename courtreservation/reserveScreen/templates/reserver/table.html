@@ -1,0 +1,3 @@
+{%for team in teams%}
+<p>{{team.team_name}} {%if team.isplaying%} are playing on {{team.court_id.courtNum}} {%endif%} {%if not team.isplaying%} is not playing {%endif%}</p>
+{%endfor%}
