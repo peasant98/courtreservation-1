@@ -12,6 +12,7 @@ from django.shortcuts import render
 from courts1.models import Team, Player, Loaded_Team
 from django.shortcuts import redirect
 from django.contrib import messages
+from reserveScreen.models import Court
 import json
 # is there are way to import other models from the other app??
 #from courtreservation/courtsv1 import models
@@ -90,4 +91,25 @@ def finder(request):
         return HttpResponse("Error! Error! Error! You have failed!")
         
         
+def cool(request):
+
+    if request.method == 'POST':
+
+        search_id = request.POST.get('input', None)
+        print search_id
+        value = str(search_id)
+        print(value[12])
+        court_en = int(value[12])
+        # court_en is where we must delete each loaded team from the court
+        for i in Court.objects.all():
+            if int(i.courtNum == court_en):
+                for x in i.loaded_team_set.all():
+                    x.delete()
+                i.courtreserved = False
+                
+                i.save()
+                print "Able to unreserve the court here, yay!"
+        print "That is the value"
     
+
+    return redirect('/courts1')

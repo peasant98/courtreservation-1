@@ -36,7 +36,7 @@ def assigner(grouper):
         checker=1
 
     # extremely important while loop here!!!
-    while len(teams)!=2 and checker==0 and len(courts)>-1:
+    while len(teams)!=2 and checker==0 and len(courts)>-1 or (len(teams)==2 and len(courts)==0):
         
         time.sleep(2)
         if(len(courts)==0):
@@ -104,5 +104,5 @@ def assigner(grouper):
         return 0, my_loaded_team
 
     
-    return 0, 
+    
 

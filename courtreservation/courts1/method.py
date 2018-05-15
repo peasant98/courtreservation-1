@@ -11,6 +11,16 @@
 
 import random as rn
 from courts1.models import Team, Player, Loaded_Team
+import time
+
+
+def timing():
+    for i in range(0, 1):
+        time.sleep(10)
+    print "20 minutes have elapsed."
+
+
+
 # work on deleting multiple teams from a database when a group has multiple and different teams!!!!
 class Team1:
 	def __init__(self):
