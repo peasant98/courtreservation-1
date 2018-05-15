@@ -169,13 +169,13 @@
   function incrementSeconds() {
       seconds += 1;
       el.innerText = "You have been here for " + Math.floor(seconds/60) + " minutes.";
-      if(seconds>=1800){
+      if(seconds>=18){
           el.innerText = "The time of the game is up! You will now go back to the homepage. Hope that you enjoyed the game.";
           var frm = document.getElementById("hallo");
           frm.style.visibility = "visible";
-          {{team.team_name | "Hello"}}
+          
 
-          if(seconds>=1810){
+          if(seconds>=20){
               el.innerText = "Bye!";
               var frm = document.getElementById("hallo");
               frm.click();
@@ -207,8 +207,9 @@ if (performance.navigation.type == 1) {
     <b>And your team name is.... {{yo_team}} </b>
     
     
-    <form action="/courts1">
-        <input type="submit" id="hallo" value="Go Back to The Main Page">
+    <form action="/courts1/cool/" method="POST">
+      {% csrf_token %}
+        <input type="submit" id="hallo" value="Leave Court {{courtNum}}" name="input">
         
     </form>
 
