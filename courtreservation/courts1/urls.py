@@ -16,5 +16,6 @@ urlpatterns = [
     # courtsv1/<id of Team>
     # url(r'^(?P<team_id>[0-9]+)/$',views.detail, name='detail'),
     url(r'^home/', views.home, name='home'),
-    url(r'^finder/', views.finder, name='finder')
+    url(r'^finder/', views.finder, name='finder'),
+    url(r'^cool/', views.cool, name='cool')
 ]
