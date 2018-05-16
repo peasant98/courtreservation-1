@@ -1,5 +1,6 @@
 # CourtsReservationSystem
 
-Hello everyone how are you doing Kevin Durant is a snake!!!!!
+A Basketball Court Reservation System (for the University of Colorado Boulder) using the Django Web Framework.
+
 
 
